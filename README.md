@@ -4,7 +4,7 @@ Personal portfolio website built with React and Vite.
 
 ### Deploy link
 
-- **Live site**: ```portfolio-lac-six-87.vercel.app```
+- **Live site**: ```https://suraj265-portfolio.vercel.app/```
 
 ### Technology used
 
