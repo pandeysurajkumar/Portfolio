@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "../ThemeContext";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -110,23 +111,22 @@ export default function Navbar() {
           </nav>
 
           {/* Resume Button */}
-          <motion.a
-            href="/resume"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`hidden sm:inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition ${
-              theme === "dark"
-                ? "border border-purple-400/50 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 hover:border-purple-400 hover:from-purple-500/30 hover:to-pink-500/30"
-                : "border border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 hover:border-purple-500"
-            }`}
-          >
-            📄 Resume
-          </motion.a>
+          <Link to="/resume">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`hidden sm:inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition ${
+                theme === "dark"
+                  ? "border border-purple-400/50 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 hover:border-purple-400"
+                  : "border border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700"
+              }`}
+            >
+              📄 Resume
+            </motion.div>
+          </Link>
 
           {/* Theme Toggle */}
           <button
@@ -183,19 +183,17 @@ export default function Navbar() {
               </a>
             ))}
 
-            <a
-              href="/resume"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className={`mt-2 inline-flex w-fit items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold ${
-                theme === "dark"
-                  ? "border border-purple-400/50 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300"
-                  : "border border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700"
-              }`}
-            >
-              📄 Resume
-            </a>
+          <Link
+            to="/resume"
+            onClick={() => setOpen(false)}
+            className={`mt-2 inline-flex w-fit items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold ${
+              theme === "dark"
+                ? "border border-purple-400/50 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300"
+                : "border border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700"
+            }`}
+          >
+            📄 Resume
+          </Link>
           </div>
         </div>
       )}

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,6 +10,8 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { useTheme } from "./ThemeContext";
+import ResumePage from "./components/Resume";
+
 const FEATURED_REPOS = [
   "File-System-Recovery-and-Optimization-Tool",
   "Feedback_servey",
@@ -143,13 +147,27 @@ export default function App() {
   return (
     <main className={containerClass}>
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects projects={projects} />
-      <Certifications />
-      <Contact />
-      <Footer />
+
+      <Routes>
+        {/* HOME */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Hero />
+              <About />
+              <Skills />
+              <Projects projects={projects} />
+              <Certifications />
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* RESUME */}
+        <Route path="/resume" element={<ResumePage />} />
+      </Routes>
     </main>
   );
 }
