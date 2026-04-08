@@ -46,7 +46,7 @@ const PROJECT_DETAILS = {
     description:
       "An AI-driven solution for forecasting material requirements and managing inventory efficiently to reduce shortages, lower costs, and streamline supply chain operations.",
     tech: ["Python", "AI", "Machine Learning", "React", "Node.js", "MongoDB"],
-    demoLink: "",
+    demoLink: "https://supply-sense-ai-eta.vercel.app/",
     image:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&h=300&fit=crop",
   },
